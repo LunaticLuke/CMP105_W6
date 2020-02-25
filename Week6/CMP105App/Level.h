@@ -4,6 +4,7 @@
 #include "Framework/Input.h"
 #include <string.h>
 #include <iostream>
+#include "GravityBall.h"
 
 
 class Level{
@@ -19,7 +20,7 @@ private:
 	// Default functions for rendering to the screen.
 	void beginDraw();
 	void endDraw();
-
+	GravityBall ballObject;
 	// Default variables for level class.
 	sf::RenderWindow* window;
 	Input* input;

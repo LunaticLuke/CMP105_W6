@@ -161,6 +161,7 @@
     <ClCompile Include="Framework\Input.cpp" />
     <ClCompile Include="Framework\GameObject.cpp" />
     <ClCompile Include="Framework\Vector.cpp" />
+    <ClCompile Include="GravityBall.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
@@ -173,6 +174,7 @@
     <ClInclude Include="Framework\Input.h" />
     <ClInclude Include="Framework\GameObject.h" />
     <ClInclude Include="Framework\Vector.h" />
+    <ClInclude Include="GravityBall.h" />
     <ClInclude Include="Level.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
