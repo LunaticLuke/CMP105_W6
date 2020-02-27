@@ -19,5 +19,6 @@ private:
 	sf::Texture texture;
 	sf::Vector2f direction;
 	sf::Vector2f stepVelocity;
+	float acceleration = 2.0f;
 };
 
