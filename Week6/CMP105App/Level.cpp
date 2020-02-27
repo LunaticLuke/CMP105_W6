@@ -10,8 +10,9 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	ballObject.setPosition(50, 50);
 	ballObject.setScale(1,1);
 	ballObject.setRenderWindow(window);
-	std::cout << window->getSize().y << std::endl;
 	ballObject.setInput(input);
+	aToBObject.setRenderWindow(window);
+	aToBObject.setPosition(0, window->getSize().y);
 }
 
 Level::~Level()
@@ -29,6 +30,7 @@ void Level::handleInput(float dt)
 void Level::update(float dt)
 {
 	ballObject.update(dt);
+	aToBObject.update(dt);
 }
 
 // Render level
@@ -36,6 +38,7 @@ void Level::render()
 {
 	beginDraw();
 	window->draw(ballObject);
+	window->draw(aToBObject);
 	endDraw();
 }
 

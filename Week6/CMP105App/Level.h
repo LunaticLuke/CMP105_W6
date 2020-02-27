@@ -5,6 +5,7 @@
 #include <string.h>
 #include <iostream>
 #include "GravityBall.h"
+#include "AToB.h"
 
 
 class Level{
@@ -24,6 +25,7 @@ private:
 	// Default variables for level class.
 	sf::RenderWindow* window;
 	Input* input;
+	AToB aToBObject;
 
 	// More level variables
 };
