@@ -6,6 +6,7 @@
 #include <iostream>
 #include "GravityBall.h"
 #include "AToB.h"
+#include "AngryBird.h"
 
 
 class Level{
@@ -26,6 +27,6 @@ private:
 	sf::RenderWindow* window;
 	Input* input;
 	AToB aToBObject;
-
+	AngryBird birdObject;
 	// More level variables
 };

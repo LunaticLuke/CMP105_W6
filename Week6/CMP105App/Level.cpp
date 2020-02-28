@@ -13,6 +13,8 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	ballObject.setInput(input);
 	aToBObject.setRenderWindow(window);
 	aToBObject.setPosition(0, window->getSize().y);
+	birdObject.setInput(input);
+	birdObject.setRenderWindow(window);
 }
 
 Level::~Level()
@@ -23,7 +25,8 @@ Level::~Level()
 // handle user input
 void Level::handleInput(float dt)
 {
-	ballObject.handleInput(dt);
+	//ballObject.handleInput(dt);
+	birdObject.handleInput(dt);
 }
 
 // Update game objects
@@ -31,6 +34,7 @@ void Level::update(float dt)
 {
 	ballObject.update(dt);
 	aToBObject.update(dt);
+	birdObject.update(dt);
 }
 
 // Render level
@@ -39,6 +43,7 @@ void Level::render()
 	beginDraw();
 	window->draw(ballObject);
 	window->draw(aToBObject);
+	window->draw(birdObject);
 	endDraw();
 }
 
