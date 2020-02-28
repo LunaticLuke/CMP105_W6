@@ -38,7 +38,7 @@ void AngryBird::update(float dt)
 		speed = Vector::magnitude(direction);
 		direction = Vector::normalise(direction);
 		velocity = direction * speed;
-		setPosition(getPosition() + (velocity * dt));
+		
 	}
 
 	applyGravity(dt);
@@ -46,28 +46,29 @@ void AngryBird::update(float dt)
 	if (getPosition().x <= 0)
 	{
 		setPosition(0, getPosition().y);
-		velocity.x = velocity.x/ 1.2f;
+		velocity = sf::Vector2f(-velocity.x, velocity.y);
 		
 	}
 	 if((getPosition().x + getSize().x)  >= wind->getSize().x)
 	{
 		 setPosition(wind->getSize().x - getSize().x, getPosition().y);
-		velocity.x = (-velocity.x) / 1.2f;
+		 velocity = sf::Vector2f(-velocity.x, velocity.y);
 		
 	}
 	 if (getPosition().y <= 0)
 	{
-		 setPosition(getPosition().x, wind->getSize().y);
-		velocity.y = (-velocity.y) / 1.2f;
+		 setPosition(getPosition().x, 0);
+		 velocity = sf::Vector2f(velocity.x, -velocity.y);
 		
 	}
 	 if ((getPosition().y + getSize().y) >= wind->getSize().y )
 	{
 		inAir = false;
 		setPosition(getPosition().x, wind->getSize().y - getSize().y);
+		velocity = sf::Vector2f(velocity.x, -velocity.y);
 		stepVelocity = sf::Vector2f(0, 0);
 	}
-	
+	 setPosition(getPosition() + (velocity * dt));
 }
 
 void AngryBird::setRenderWindow(sf::RenderWindow* rendWind)
